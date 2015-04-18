@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_adHead.html") %>
+  </head>
+  <body>
+    <responsive-child class="map-container">
+   <script type="text/javascript" src="http://seattletimes.nwsource.com/js/2011/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="http://seattletimes.nwsource.com/js/2011/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+                                <link rel="stylesheet" type="text/css" href="http://seattletimes.nwsource.com/js/2011/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+                <script type="text/javascript"> 
+                 (function($){
+                  $(document).ready(function() {
+                   $(".fancybox").fancybox({
+                  'padding' : 0
+                  });
+                   $(".load").hide();
+                  }); //end document.ready
+                 })(jQuery);
+                 </script>
+
+    </responsive-child>
+
+    <script src="app.js"></script>
+    <%= json.project.production ? t.include("partials/_adFoot.html") : "" %>
+    <%= json.project.production ? t.include("partials/_workHere.html") : "" %>
+  </body>
+</html>
